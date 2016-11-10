@@ -26,7 +26,7 @@ metadata {
 	}
 
 	tiles {
-        standardTile("contact", "device.contact", inactiveLabel: false) {
+    standardTile("contact", "device.contact", inactiveLabel: false) {
 			state "open", label: '${name}', icon: "st.contact.contact.open", backgroundColor: "#ffa81e"
 			state "closed", label: '${name}', icon: "st.contact.contact.closed", backgroundColor: "#79b821"
 		}  

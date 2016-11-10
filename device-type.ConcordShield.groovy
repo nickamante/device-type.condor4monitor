@@ -1,5 +1,5 @@
 /**
- *  CondorShield
+ *  ConcordShield
  *
  *  Copyright 2014 CaesarsGhost
  *
@@ -16,7 +16,7 @@
 
 metadata {
 	// Automatically generated. Make future change here.
-	definition (name: "CondorShield", author: "CaesarsGhost", namespace: "CaesarsGhost") {
+	definition (name: "ConcordShield", author: "CaesarsGhost", namespace: "CaesarsGhost") {
         capability "Polling"
         capability "Lock"
         command "armstay"
@@ -50,55 +50,55 @@ metadata {
 	}
 
 	tiles {
-        standardTile("ArmTile", "device.lock", canChangeIcon: true, inactiveLabel: false) {
-            state "unlocked", label: 'Arm', action: "armstay", icon: "st.Home.home3", backgroundColor: "#ffa81e", nextState: "locking"
-            state "locking", label: 'Arming', action: "armstay", icon: "st.Weather.weather1", backgroundColor: "#cccccc"
-            state "locked", label: 'Disarm', action: "Disarm", icon: "st.Home.home3", backgroundColor: "#79b821", nextState: "unlocking"
-            state "unlocking", label: 'Disarming', action: "Disarm", icon: "st.Weather.weather1", backgroundColor: "#cccccc"
-        }
-        standardTile("silent", "device.silent", canChangeIcon: true, inactiveLabel: false) {        						
+    standardTile("ArmTile", "device.lock", canChangeIcon: true, inactiveLabel: false) {
+      state "unlocked", label: 'Arm', action: "armstay", icon: "st.Home.home3", backgroundColor: "#ffa81e", nextState: "locking"
+      state "locking", label: 'Arming', action: "armstay", icon: "st.Weather.weather1", backgroundColor: "#cccccc"
+      state "locked", label: 'Disarm', action: "Disarm", icon: "st.Home.home3", backgroundColor: "#79b821", nextState: "unlocking"
+      state "unlocking", label: 'Disarming', action: "Disarm", icon: "st.Weather.weather1", backgroundColor: "#cccccc"
+    }
+    standardTile("silent", "device.silent", canChangeIcon: true, inactiveLabel: false) {        						
 			state "loud", label: 'loud', action: "armSilent", icon: "st.Outdoor.outdoor10", backgroundColor: "#79b821" , nextState: "silent"           
 			state "silent", label: 'silent', action:"armLoud", icon: "st.Outdoor.outdoor9", backgroundColor: "#ffa81e" , nextState : "loud"            
 		}        
-        standardTile("bypass", "device.bypass", canChangeIcon: true,inactiveLabel: false) {        						
+    standardTile("bypass", "device.bypass", canChangeIcon: true,inactiveLabel: false) {        						
 			state "disable", label: 'Disabled', action: "armBypass", icon: "st.Outdoor.outdoor10", backgroundColor: "#79b821" , nextState: "enable"
 			state "enable", label: 'Enabled', action:"armRegular", icon: "st.Outdoor.outdoor9", backgroundColor: "#ffa81e" , nextState: "disable"  
 		}                
-        standardTile("Zone 1", "device.zone1", inactiveLabel: false) {
-        	state "closed", label: 'Zone 1', icon: "st.contact.contact.closed", backgroundColor: "#79b821"
+    standardTile("Zone 1", "device.zone1", inactiveLabel: false) {
+      state "closed", label: 'Zone 1', icon: "st.contact.contact.closed", backgroundColor: "#79b821"
 			state "open", label: 'Zone 1', icon: "st.contact.contact.open", backgroundColor: "#ffa81e"			
 		}  
-        standardTile("Zone 2", "device.zone2", inactiveLabel: false) {			
+    standardTile("Zone 2", "device.zone2", inactiveLabel: false) {			
 			state "closed", label: 'Zone 2', icon: "st.contact.contact.closed", backgroundColor: "#79b821"
-            state "open", label: 'Zone 2', icon: "st.contact.contact.open", backgroundColor: "#ffa81e"
+      state "open", label: 'Zone 2', icon: "st.contact.contact.open", backgroundColor: "#ffa81e"
 		}  
-        standardTile("Zone 3", "device.zone3", inactiveLabel: false) {
-        	state "closed", label: 'Zone 3', icon: "st.contact.contact.closed", backgroundColor: "#79b821"
+    standardTile("Zone 3", "device.zone3", inactiveLabel: false) {
+      state "closed", label: 'Zone 3', icon: "st.contact.contact.closed", backgroundColor: "#79b821"
 			state "open", label: 'Zone 3', icon: "st.contact.contact.open", backgroundColor: "#ffa81e"			
 		}  
-        standardTile("Zone 4", "device.zone4", inactiveLabel: false) {			
+    standardTile("Zone 4", "device.zone4", inactiveLabel: false) {			
 			state "closed", label: 'Zone 4', icon: "st.contact.contact.closed", backgroundColor: "#79b821"
-            state "open", label: 'Zone 4', icon: "st.contact.contact.open", backgroundColor: "#ffa81e"
+      state "open", label: 'Zone 4', icon: "st.contact.contact.open", backgroundColor: "#ffa81e"
 		}  
-        standardTile("Zone 5", "device.zone5", inactiveLabel: false) {			
+    standardTile("Zone 5", "device.zone5", inactiveLabel: false) {			
 			state "closed", label: 'Zone 5', icon: "st.contact.contact.closed", backgroundColor: "#79b821"
-            state "open", label: 'Zone 5', icon: "st.contact.contact.open", backgroundColor: "#ffa81e"
+      state "open", label: 'Zone 5', icon: "st.contact.contact.open", backgroundColor: "#ffa81e"
 		}  
-        standardTile("Zone 6", "device.zone6", inactiveLabel: false) {			
+    standardTile("Zone 6", "device.zone6", inactiveLabel: false) {			
 			state "closed", label: 'Zone 6', icon: "st.contact.contact.closed", backgroundColor: "#79b821"
-            state "open", label: 'Zone 6', icon: "st.contact.contact.open", backgroundColor: "#ffa81e"
+      state "open", label: 'Zone 6', icon: "st.contact.contact.open", backgroundColor: "#ffa81e"
 		}  
 		standardTile("refresh", "device.alarmMode", inactiveLabel: false, decoration: "flat") {
 			state "default", action:"polling.poll", icon:"st.secondary.refresh"
 		} 
 		standardTile("displayupdate", "device.displayupdate", inactiveLabel: false) { 
 			state "inactive", label: "Display", action:"displayrequest", icon: "st.Electronics.electronics18", backgroundColor: "#ffa81e"
-            state "active", label: "Display", action:"displaystop", icon: "st.Electronics.electronics18", backgroundColor: "#79b821"
+      state "active", label: "Display", action:"displaystop", icon: "st.Electronics.electronics18", backgroundColor: "#79b821"
 		}        
-        valueTile("paneldisplay", "device.paneldisplay", width: 2, height: 1, decoration: "flat") {
-            state "default", label:'${currentValue}'
-        }        
-	    standardTile("keyStar", "device.keyStar", width: 1, height: 1, inactiveLabel: false, decoration: "flat") {
+    valueTile("paneldisplay", "device.paneldisplay", width: 2, height: 1, decoration: "flat") {
+      state "default", label:'${currentValue}'
+    }        
+	  standardTile("keyStar", "device.keyStar", width: 1, height: 1, inactiveLabel: false, decoration: "flat") {
 			state "default", action:"keyStar", label: '*'
 		}  
 		standardTile("keyOne", "device.keyOne", width: 1, height: 1, inactiveLabel: false, decoration: "flat") {
@@ -186,7 +186,7 @@ def parse(String description) {
     }    
     else
     {
-    	//This is raw condor data        
+    	//This is raw concord data        
 	 	def decodedValue = value.decodeHex();
         
         switch( decodedValue[1] )

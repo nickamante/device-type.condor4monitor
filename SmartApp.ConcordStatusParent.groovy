@@ -1,5 +1,5 @@
 /**
- *  CondorStatusParent
+ *  ConcordStatusParent
  *
  *  Copyright 2014 CaesarsGhost
  *
@@ -14,10 +14,10 @@
  *
  */
 definition(
-    name: "CondorStatusParent",
+    name: "ConcordStatusParent",
     namespace: "CaesarsGhost",
     author: "CaesarsGhost",
-    description: "Handles the virtual devices for the CondorShield",
+    description: "Handles the virtual devices for the ConcordShield",
     category: "Safety & Security",
     iconUrl: "https://s3.amazonaws.com/smartapp-icons/Convenience/Cat-Convenience.png",
     iconX2Url: "https://s3.amazonaws.com/smartapp-icons/Convenience/Cat-Convenience@2x.png")
@@ -32,8 +32,8 @@ preferences {
         input "zone5", "device.virtualContact", title:"Zone 5"
         input "zone6", "device.virtualContact", title:"Zone 6"
 	}
-	section("Which Arduino Is your Condor Interface?") {
-		input "condor", "device.condorShield"
+	section("Which Arduino Is your Concord Interface?") {
+		input "concord", "device.concordShield"
 	}    
 }
 
@@ -54,8 +54,8 @@ def initialize() {
 
 	for(int i=1; i<=6; i++ )
     {
-		subscribe( condor, "zone${i}.open", zoneOpen )
-    	subscribe( condor, "zone${i}.closed", zoneClose )
+		subscribe( concord, "zone${i}.open", zoneOpen )
+    	subscribe( concord, "zone${i}.closed", zoneClose )
     }
 }
 
